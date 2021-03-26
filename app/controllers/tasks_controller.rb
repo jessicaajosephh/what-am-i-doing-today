@@ -2,7 +2,11 @@ class TasksController < ApplicationController
 
 #create
     get '/tasks/new' do
-        "task list"
+        erb :'/tasks/new'
+    end
+
+    post '/tasks' do
+        "procees list"
     end
 
 
