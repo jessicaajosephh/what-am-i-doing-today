@@ -18,6 +18,10 @@ class TasksController < ApplicationController
         erb :'/tasks/show'
     end
 
+    post '/tasks' do
+        @tasks = Task.all
+        erb :'/tasks/index'
+
 
 #update
 
