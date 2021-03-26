@@ -33,10 +33,14 @@ class TasksController < ApplicationController
     end
 
     patch '/tasks/:id' do
-
+        @task = Task.find(params[:id])
+        @task.update(name: params[:name], description: params[:description])
+        redirect "/tasks/#{@task.id}"
     end
 
 
 #delete
+
+    
 
 end
