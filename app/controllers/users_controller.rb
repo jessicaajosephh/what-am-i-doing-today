@@ -40,8 +40,12 @@ class UsersController < ApplicationController
     end
 
     get '/users/logout' do
-        sessions.clear 
-        redirect '/'
+        if logged_in?
+          sessions.clear 
+          redirect '/users/login'
+        else
+            redirect '/'
+        end
     end
 
 end
