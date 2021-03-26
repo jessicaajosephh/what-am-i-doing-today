@@ -1,0 +1,8 @@
+<h1> Task List Page </h1>
+
+<form action="/tasks/#{@task.id}" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  Edit Name: <input type="text" value="<%= @task.name %>" name="name">
+  Edit Description: <input type="text" value="<%= @task.description %>" name="description">
+  <input type="submit">
+</form>
