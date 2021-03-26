@@ -28,7 +28,8 @@ class TasksController < ApplicationController
 #update
 
     get '/tasks/:id/edit' do
-
+        @task = Task.find(params[:id])
+        erb :'/tasks/edit'
     end
 
 
