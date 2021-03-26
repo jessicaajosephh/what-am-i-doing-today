@@ -6,7 +6,8 @@ class TasksController < ApplicationController
     end
 
     post '/tasks' do
-        "procees list"
+        @task = Task.create(name: params[:name], description: params[:description])
+        redirect "/tasks/#{@task.id}"
     end
 
 
