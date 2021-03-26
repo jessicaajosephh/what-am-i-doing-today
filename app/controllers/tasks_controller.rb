@@ -32,7 +32,7 @@ class TasksController < ApplicationController
         erb :'/tasks/edit'
     end
 
-    patch '/tasks/:id' do
+    post '/tasks/:id' do
         @task = Task.find(params[:id])
         @task.update(name: params[:name], description: params[:description])
         redirect "/tasks/#{@task.id}"
@@ -41,6 +41,10 @@ class TasksController < ApplicationController
 
 #delete
 
-    
+    delete '/tasks/:id' do
+        @task = Task.find(params[:id])
+        @task.destroy 
+        redirect '/tasks'
+    end
 
 end
