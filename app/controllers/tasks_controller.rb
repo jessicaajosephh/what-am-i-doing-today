@@ -12,6 +12,7 @@ class TasksController < ApplicationController
 
     post '/tasks' do
         @task = Task.create(name: params[:name], description: params[:description])
+        current_user.tasks << @task
         redirect "/tasks/#{@task.id}"
     end
 
