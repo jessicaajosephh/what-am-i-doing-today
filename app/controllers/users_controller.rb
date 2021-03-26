@@ -10,8 +10,8 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do
-        #erb :'/users/show'
-        "show page"
+        @user = User.find(params[:id])
+        erb :'/users/show'
     end
 
 end
