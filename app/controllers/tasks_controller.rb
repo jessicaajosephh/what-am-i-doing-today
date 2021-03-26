@@ -32,6 +32,10 @@ class TasksController < ApplicationController
         erb :'/tasks/edit'
     end
 
+    patch '/tasks/:id' do
+
+    end
+
 
 #delete
 
