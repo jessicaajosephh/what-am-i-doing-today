@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
 #create
+
     get '/tasks/new' do
         erb :'/tasks/new'
     end
@@ -18,13 +19,17 @@ class TasksController < ApplicationController
         erb :'/tasks/show'
     end
 
-    post '/tasks' do
+    get '/tasks' do
         @tasks = Task.all
         erb :'/tasks/index'
+    end
 
 
 #update
 
+    get '/tasks/:id/edit' do
+
+    end
 
 
 #delete
