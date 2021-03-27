@@ -33,7 +33,7 @@ class TasksController < ApplicationController
           @tasks = current_user.tasks
           erb :'/tasks/index'
         else
-          redirect '/users/signup'
+          redirect '/users/login'
         end
     end
 

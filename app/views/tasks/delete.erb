@@ -1,5 +1,5 @@
 Task Name: <%= @task.name %> <br>
-Task Description: <%= @task.description %>
+Task Details: <%= @task.description %>
 
 <form method="post" action="/tasks/<%= @task.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">

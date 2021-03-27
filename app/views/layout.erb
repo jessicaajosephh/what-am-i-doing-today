@@ -16,10 +16,11 @@
   <body>
     <div class="navbar">
       <% if logged_in?%>
-        <a href="/logout"> Logout </a>
-      <% end %>
+        <a href="/logout"> Logout </a> <br>
+        <a href='/'>Home</a>
+      <% end %> 
     </div>
-    
+
     <div class="wrapper">
 
         <%= yield %>

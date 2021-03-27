@@ -1,9 +1,6 @@
-<div class="col-6">
-<% @tasks.each do |task| %>
-    Task Number: <%= task.id %><br>
-    Task Name: <%= task.name %><br>
-    Task Description: <%= task.description %><br>
-    
-
-
-<% end %>
+<div class="list-group" "text-center">
+    <% @tasks.each do |task| %>
+      <h3><a href="tasks/<%= task.id%>" class="list-group-item"><%= task.name %></a></h3>
+    <% end %><br><br>
+    <a class="btn btn-sm btn-primary" href="/tasks/new">Create Task</a>
+</div>
