@@ -68,9 +68,9 @@ class TasksController < ApplicationController
 
     get '/tasks/:id/delete' do
         if logged_in?
-        @task = Task.find_by(params[:id])
+        @task = Task.find(params[:id])
         if current_user.id == @task.user_id
-            @task.destroy
+            erb :'/tasks/delete'
         else
             redirect '/users/login'
         end
@@ -78,15 +78,14 @@ class TasksController < ApplicationController
     end
 
     delete '/tasks/:id' do
-        #if logged_in?
+        if logged_in?
           @task = Task.find_by_id(params[:id])
-          #if current_user.id == @task.user_id
-            @task.destroy 
-            redirect '/tasks'
-          #else
-            #redirect '/users/login'
-          #end
-        #end
+            if @task.destroy 
+                redirect '/tasks'
+          else
+            redirect '/users/login'
+          end
+        end
     end
 
 end
