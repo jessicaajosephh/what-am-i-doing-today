@@ -38,20 +38,16 @@ class UsersController < ApplicationController
     end
 
     get '/users/:id' do 
-        if logged_in?
-            @user = User.find(params[:id])
-            erb :'/users/show'
-        else
-            redirect '/users/login'
-        end
+        @user = User.find(params[:id])
+        erb :'/users/show'
     end 
 
     get '/logout' do 
         if logged_in?
           session.clear
-          redirect '/users/login'
+          redirect '/'
         else
-            redirect '/'
+            redirect '/users/login'
         end
     end 
 
