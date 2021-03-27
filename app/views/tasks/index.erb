@@ -1,6 +1,9 @@
+<div class="col-6">
 <% @tasks.each do |task| %>
-    Task Number: <%= task.id %>
-    Task Name: <%= task.name %>
-    Task Description: <%= task.description %>
-    Username: <%= task.user.username %>
+    Task Number: <%= task.id %><br>
+    Task Name: <%= task.name %><br>
+    Task Description: <%= task.description %><br>
+    
+
+
 <% end %>
