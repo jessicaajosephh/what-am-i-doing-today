@@ -33,6 +33,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
+            #flash[:notice] = "Before continuing, please signup"
             redirect '/users/login'
         end
     end

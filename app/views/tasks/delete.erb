@@ -1,8 +1,11 @@
+<h1> Delete Task </h1>
+
 Task Name: <%= @task.name %> <br>
 Task Details: <%= @task.description %>
 
 <form method="post" action="/tasks/<%= @task.id %>">
-  <button type="button" class="btn btn-outline-danger">Delete</button>
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
 </form>
+
+<a class="btn btn-sm btn-danger" href="/tasks/:id/delete">Delete</a>

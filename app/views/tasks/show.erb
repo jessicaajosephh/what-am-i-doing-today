@@ -4,7 +4,8 @@ Task Details: <%= @task.description %>
 <form method="post" action="/tasks/<%= @task.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="delete">
-</form> <br>
+</form> 
+
 
 <a href="/tasks">Back to Tasks</a>
 

@@ -13,6 +13,7 @@ class TasksController < ApplicationController
     post '/tasks' do
         @task = Task.create(name: params[:name], description: params[:description])
         current_user.tasks << @task
+        #flash[:notice] = "Task has been succesfully created"
         redirect "/tasks"
     end
 
@@ -56,6 +57,7 @@ class TasksController < ApplicationController
           @task = Task.find(params[:id])
           @task.update(name: params[:name], description: params[:description])
           if @task.save
+            #flash[:notice] = "Task has been succesfully updated"
             redirect '/tasks'
           else
             redirect "/tasks/#{@task.id}/edit"
@@ -81,6 +83,7 @@ class TasksController < ApplicationController
         if logged_in?
           @task = Task.find_by_id(params[:id])
             if @task.destroy 
+                #flash[:notice] = "Task has been succesfully deleted"
                 redirect '/tasks'
           else
             redirect '/users/login'
