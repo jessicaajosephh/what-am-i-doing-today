@@ -5,7 +5,8 @@
 </title>
 </head>
 <body background="https://www.muralswallpaper.com/app/uploads/Pink-Marble-WEBSITE-SWATCH-820x532.jpg">
-<h1> Create A New Task </h1>
+<div class="container">
+<h1 class="new_task"> Create A New Task </h1>
 
 <form action='/tasks' method="POST">
   Name: <input type="text" name="name">
@@ -13,5 +14,27 @@
   <input type="submit">
 
 </form>
+</div>
+<style>
+
+    .new_task {
+        color: #black;
+        border: 2px #869089;
+        outline-style: inset;
+        outline-color: #black;
+        outline-width: medium;
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        margin-bottom: 20%;
+        font-size: 80px;
+    }
+
+    form {
+        text-align: center;
+    }
+
+</style>
 </body>
 </html>

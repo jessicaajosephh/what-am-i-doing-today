@@ -5,12 +5,35 @@
 </title>
 </head>
 <body background="https://www.muralswallpaper.com/app/uploads/Pink-Marble-WEBSITE-SWATCH-820x532.jpg">
-<h1> SignUp Page </h1>
+<div class="container">
+<h1 class="signup_page"> Signup Below </h1>
 
 <form action='/users/signup' method="POST">
   Username: <input type="text" name="username">
   Password: <input type="password" name="password">
   <input type="submit">
 </form>
+</div>
+<style>
+
+    .signup_page {
+        color: #black;
+        border: 2px #869089;
+        outline-style: inset;
+        outline-color: #black;
+        outline-width: medium;
+        text-align: center;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 5%;
+        margin-bottom: 20%;
+        font-size: 100px;
+    }
+
+    form {
+        text-align: center;
+    }
+
+</style>
 </body>
 </html>
