@@ -22,10 +22,11 @@ Specs:
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
         # Have not been able to implement this but I plan on doing it in the near future
 - [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+        # Created a readme file with a short description, install instructions, a contributor's guide, and a link to the license
 
 Confirm
 - [x] You have a large number of small Git commits
-        # 
+        # Around 70 commit message were created
 - [x] Your commit messages are meaningful
         # Commit messages state clearly what I did regarding adding or editing code
 - [x] You made the changes in a commit that relate to the commit message
