@@ -58,9 +58,9 @@ class TasksController < ApplicationController
           @task.update(name: params[:name], description: params[:description])
           if @task.save
             #flash[:notice] = "Task has been succesfully updated"
-            redirect '/tasks'
+            redirect "/tasks/#{@task.id}"
           else
-            redirect "/tasks/#{@task.id}/edit"
+            redirect '/tasks'
           end
         end
     end
