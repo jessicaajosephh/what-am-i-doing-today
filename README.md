@@ -2,7 +2,7 @@
 Using this Sinatra-based web app a user can create an account and easily keep track of everything they need to do on a day-to-day basis!
 
 ## Installation
-Fork and clone the [repo](https://github.com/jessicaajosephh/what-am-i-doing-today) 
+Fork and clone the [repo](https://github.com/jessicaajosephh/what-am-i-doing-today).
 Once repo is cloned, run ``bundle install`` to install all the gems required for the application.
 After gems are installed, run ``rake db:migrate`` to set up your connection with the databse.
 Then, run ``shotgun`` to start up the application.
