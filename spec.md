@@ -21,7 +21,7 @@ Specs:
         # Validates a users username presence and uniqueness
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
         # Have not been able to implement this but I plan on doing it in the near future
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
         # Created a readme file with a short description, install instructions, a contributor's guide, and a link to the license
 
 Confirm
