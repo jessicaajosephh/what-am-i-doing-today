@@ -1,5 +1,5 @@
 # What Am I Doing Today?
-Using this Sinatra-based web app a user can create an account and easily keep track of everything they need to do on a day-to-day basis.
+Using this Sinatra-based web app a user can create an account and easily keep track of everything they need to do on a day-to-day basis!
 
 ## Installation
 Fork and clone the [repo](https://github.com/jessicaajosephh/what-am-i-doing-today) 
