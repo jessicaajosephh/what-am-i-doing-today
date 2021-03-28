@@ -1,13 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Add Background img"
+</title>
+</head>
+<body background="https://www.muralswallpaper.com/app/uploads/Pink-Marble-WEBSITE-SWATCH-820x532.jpg">
+<h1><%= current_user.username %>'s Task</h1>
 Task Name: <%= @task.name %> <br>
-Task Details: <%= @task.description %>
+Task Details: <%= @task.description %><br>
 
 <form method="post" action="/tasks/<%= @task.id %>">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete">
-</form> 
+  <input type="submit" value="Delete Task">
+</form>
+<a href="/tasks/<%= @task.id %>/edit"><button type="button" class="btn btn-primary btn-sm">Edit Task</button></a><br>
+ 
 
 
 <a href="/tasks">Back to Tasks</a>
+</body>
+</html>
 
 
 

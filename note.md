@@ -29,3 +29,11 @@
 <% end %>
 
 <a class="nav-link active" aria-current="page" href="/">Home<a>
+
+<h1> Login Page </h1>
+
+<form action='/users/login' method="POST">
+  Username: <input type="text" name="username">
+  Password: <input type="password" name="password">
+  <input type="submit">
+</form>

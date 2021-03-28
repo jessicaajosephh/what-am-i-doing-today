@@ -1,4 +1,33 @@
-Welcome, <%= current_user.username %>
+<!DOCTYPE html>
+<html>
+<head>
+<title> Add Background img"
+</title>
+</head>
+<body background="https://www.muralswallpaper.com/app/uploads/Pink-Marble-WEBSITE-SWATCH-820x532.jpg">
+
+<div class="container">
+<h1> Welcome, <%= current_user.username %>.<br>
+
+Today's date is <%= Time.now.strftime("%m/%d/%Y") %>.<br>
+The current time is <%= Time.now.strftime("%H:%M") %></h1>
+
+<p> To view your tasks or to create a new one please navigate to the bar on top of the screen</p>
+
+</div>
+<style>
+    .container {
+        text-align: center;
+    }
+</style>
+
+</body>
+</html>
+
+
+
+    
+
 
 
 

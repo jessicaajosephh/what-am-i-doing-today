@@ -1,8 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Add Background img"
+</title>
+</head>
+<body background="https://www.muralswallpaper.com/app/uploads/Pink-Marble-WEBSITE-SWATCH-820x532.jpg">
 <h1> Edit Tasks </h1>
 
 <form action="/tasks/<%= @task.id %>" method="POST">
   <input id="hidden" type="hidden" name="_method" value="patch">
   Edit Name: <input type="text" value="<%= @task.name %>" name="name">
-  Edit Description: <input type="text" value="<%= @task.description %>" name="description">
+  Edit Details: <textarea name="description"><%= @task.description %></textarea>
   <input type="submit">
 </form>
+</body>
+</html>
