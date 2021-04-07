@@ -34,9 +34,15 @@ class ApplicationController < Sinatra::Base
         @current_user ||= User.find(session[:user_id])
       end
 
-      #def redirect_if_not_logged_in
-      #  redirect '/users/login' if !logged_in?
-      #end
+      def redirect_if_not_logged_in
+        redirect '/users/login' if !logged_in?
+      end
+
+      def redirect_if_not_authorized
+        if current_user.id != @task.user_id
+          redirect '/tasks'
+        end
+      end
   end
 
 end

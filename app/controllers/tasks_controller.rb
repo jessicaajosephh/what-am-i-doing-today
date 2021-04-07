@@ -3,11 +3,8 @@ class TasksController < ApplicationController
 #create
 
     get '/tasks/new' do
-        if logged_in?
-          erb :'/tasks/new'
-        else
-            redirect '/users/login'
-        end
+        redirect_if_not_logged_in
+        erb :'/tasks/new'
     end
 
     post '/tasks' do
@@ -21,74 +18,51 @@ class TasksController < ApplicationController
 #read
 
     get '/tasks/:id' do
-        if logged_in?
-          @task = Task.find_by_id(params[:id])
-          erb :'/tasks/show'
-        else
-          redirect '/users/login'
-        end
+        redirect_if_not_logged_in
+        @task = Task.find_by_id(params[:id])
+        erb :'/tasks/show'
     end
 
     get '/tasks' do
-        if logged_in?
-          @tasks = current_user.tasks
-          erb :'/tasks/index'
-        else
-          redirect '/users/login'
-        end
+        redirect_if_not_logged_in
+        @tasks = current_user.tasks
+        erb :'/tasks/index'
     end
 
 
 #update
 
     get '/tasks/:id/edit' do
-        if logged_in?
-          @task = Task.find(params[:id])
-          if current_user.id == @task.user_id
-            erb :'/tasks/edit'
-        else
-            redirect '/users/login'
-        end
-    end
+        redirect_if_not_logged_in
+        @task = Task.find(params[:id])
+        redirect_if_not_authorized
+        erb :'/tasks/edit'
     end
 
     patch '/tasks/:id' do
-        if logged_in?
-          @task = Task.find(params[:id])
-          @task.update(name: params[:name], description: params[:description])
-          if @task.save
-            #flash[:notice] = "Task has been succesfully updated"
-            redirect "/tasks/#{@task.id}"
-          else
-            redirect '/tasks'
-          end
-        end
+        redirect_if_not_logged_in 
+        @task = Task.find(params[:id])
+        redirect_if_not_authorized 
+        @task.update(name: params[:name], description: params[:description])
+        redirect "/tasks/#{@task.id}"
     end
 
 
 #delete
 
     get '/tasks/:id/delete' do
-        if logged_in?
+        redirect_if_not_logged_in
         @task = Task.find(params[:id])
-        if current_user.id == @task.user_id
-            erb :'/tasks/delete'
-        else
-            redirect '/users/login'
-        end
-    end
+        redirect_if_not_authorized
+        erb :'/tasks/delete'
     end
 
     delete '/tasks/:id' do
-        if logged_in?
-          @task = Task.find_by_id(params[:id])
-            if @task.destroy 
-                #flash[:notice] = "Task has been succesfully deleted"
-                redirect '/tasks'
-          else
-            redirect '/users/login'
-          end
-        end
+        redirect_if_not_logged_in
+        @task = Task.find_by_id(params[:id])
+        redirect_if_not_authorized 
+        @task.destroy 
+        redirect '/tasks'
     end
 
 end
